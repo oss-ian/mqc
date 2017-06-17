@@ -1,5 +1,14 @@
 repo=$(shell basename $$(pwd))
+
 default:
+	@echo 	"\nmake usage:\n" \
+		"	build 	: compile\n" \
+		"	crypt 	: tarball and encrypt\n" \
+		"	decrypt	: decrypt and untar\n" \
+		"	push 	: push the latest tarball to the repo\n" \
+		"	pull 	: reset the local repo and pull the latest tarball\n"
+
+build:
 	gcc *.c -lmosquitto -s -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-math-errno -fmerge-all-constants -fno-ident -Wl,--build-id=none -Os -ffast-math -fshort-enums -fsingle-precision-constant -Wl,--hash-style=gnu -Wl,--build-id=none -fno-unroll-loops -o bin
 	
 crypt:
@@ -13,11 +22,3 @@ push:
 
 pull:
 	rm -rf *.c *.h bin; git reset --hard; git pull
-
-default:
-	@echo 	"\nmake usage:\n" \
-		"	build 	: compile\n" \
-		"	crypt 	: tarball and encrypt\n" \
-		"	decrypt	: decrypt and untar\n" \
-		"	push 	: push the latest tarball to the repo\n" \
-		"	pull 	: reset the local repo and pull the latest tarball\n"
