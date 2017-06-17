@@ -9,3 +9,6 @@ decrypt:
 
 push:
 	git add kek.tar.xz.aes; git commit -m `sha256sum kek.tar.xz.aes`; git push -u origin master
+
+reset:
+	git reset --hard
