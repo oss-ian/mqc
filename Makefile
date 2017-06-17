@@ -21,4 +21,4 @@ push:
 	git add $(repo).tar.xz.aes; git commit -m `sha256sum $(repo).tar.xz.aes`; git push -u origin master
 
 pull:
-	rm -rf *.c *.h bin; git reset --hard; git pull
+	rm -rf $(shell ls | grep -v -e .git -e Makefile -e README.md); git reset --hard; git pull
