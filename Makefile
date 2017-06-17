@@ -1,5 +1,5 @@
 crypt:
-	tar cpvJF kek.tar.xz . ; cat kek.tar.xz | aespipe > kek.tar.xz.aes ; rm -rf kek.tar; rm ALL THE FILES IN PROJECT
+	tar cpvJF kek.tar.xz $( find -name "*.c" -or -name "*.h" ); cat kek.tar.xz | aespipe > kek.tar.xz.aes ; rm -rf kek.tar.xz
 
 
 decrypt:
