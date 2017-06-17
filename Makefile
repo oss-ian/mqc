@@ -14,10 +14,10 @@ push:
 pull:
 	rm -rf *.c *.h bin; git reset --hard; git pull
 
-usage:
-	@echo 	"\n make -\n" \
-		"    default - compile\n" \
-		"    crypt - tarball and encrypt\n" \
-		"    decrypt - decrypt and untar\n" \
-		"    push - push the latest tarball to the repo\n" \
-		"    pull - reset the local repo and pull the latest tarball\n"
+default:
+	@echo 	"\nmake usage:\n" \
+		"	build 	: compile\n" \
+		"	crypt 	: tarball and encrypt\n" \
+		"	decrypt	: decrypt and untar\n" \
+		"	push 	: push the latest tarball to the repo\n" \
+		"	pull 	: reset the local repo and pull the latest tarball\n"
