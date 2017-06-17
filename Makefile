@@ -6,3 +6,6 @@ crypt:
 
 decrypt:
 	cat kek.tar.xz.aes | aespipe -d | xz -d | tar xf -; rm kek.tar.xz.aes
+
+push:
+	git add kek.tar.xz.aes; git commit -m $(sha256sum kek.tar.xz.aes); git push -u origin master
