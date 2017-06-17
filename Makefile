@@ -3,7 +3,7 @@ default:
 	gcc *.c -lmosquitto -s -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-math-errno -fmerge-all-constants -fno-ident -Wl,--build-id=none -Os -ffast-math -fshort-enums -fsingle-precision-constant -Wl,--hash-style=gnu -Wl,--build-id=none -fno-unroll-loops -o bin
 	
 crypt:
-	tar --exclude='bin' --exclude='Makefile' --exclude='README.md' --exclude='.git' -cf - . | xz | aespipe > $(repo).tar.xz.aes ; rm -rf *.c *.h bin
+	tar --exclude='bin' --exclude='Makefile' --exclude='README.md' --exclude='.git' --exclude=$(repo).tar.xz.aes -cf - . | xz | aespipe > $(repo).tar.xz.aes
 
 decrypt:
 	cat $(repo).tar.xz.aes | aespipe -d | xz -d | tar xf -; rm $(repo).tar.xz.aes
