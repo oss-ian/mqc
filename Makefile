@@ -15,7 +15,7 @@ pull:
 	rm -rf *.c *.h bin; git reset --hard; git pull
 
 usage:
-	@echo 	"make -\n" \
+	@echo 	"\n make -\n" \
 		"    default - compile\n" \
 		"    crypt - tarball and encrypt\n" \
 		"    decrypt - decrypt and untar\n" \
