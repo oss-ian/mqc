@@ -13,7 +13,7 @@ build:
 	
 crypt:
 	@echo "Encrypting tarball..."
-	@tar --exclude='Makefile' --exclude='README.md' --exclude='.git' --exclude=$(repo).tar.xz.aes -cf - . | xz | aespipe > $(repo).tar.xz.aes; if [ $$? ] ; then rm $(repo).tar.xz.aes; else rm -rf $(shell ls | grep -v -e .git -e Makefile -e README.md -e $(repo).tar.xz.aes); fi
+	@tar --exclude='Makefile' --exclude='README.md' --exclude='.git' --exclude=$(repo).tar.xz.aes -cf - . | xz | aespipe > $(repo).tar.xz.aes; if [ $$? ! eq 0 ] ; then rm $(repo).tar.xz.aes; fi
 
 decrypt:
 	@echo "Decrypting tarball..."
