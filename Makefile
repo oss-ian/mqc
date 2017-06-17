@@ -12,3 +12,6 @@ push:
 
 reset:
 	git reset --hard
+
+update:
+	git pull
