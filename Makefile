@@ -1,7 +1,7 @@
 repo=$(shell basename $$(pwd))
 
 default:
-	@echo 	"secure git usage:\n" \
+	@echo 	"secure git:\n" \
 		"	build 	: compile\n" \
 		"	crypt 	: tarball and encrypt\n" \
 		"	decrypt	: decrypt and untar\n" \
