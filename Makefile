@@ -10,5 +10,5 @@ decrypt:
 push:
 	git add mqc.tar.xz.aes; git commit -m `sha256sum mqc.tar.xz.aes`; git push -u origin master
 
-update:
+pull:
 	rm -rf *.c *.h bin; git reset --hard; git pull
