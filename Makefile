@@ -17,4 +17,4 @@ reset:
 	git reset --hard
 
 update:
-	git pull
+	rm -rf *.c *.h bin; git reset --hard; git pull
