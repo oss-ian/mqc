@@ -5,4 +5,4 @@ crypt:
 	tar --exclude='bin' --exclude='Makefile' --exclude='README.md' --exclude='.git' -cf - . | xz | aespipe > kek.tar.xz.aes ; rm -rf *.c *.h bin
 
 decrypt:
-	cat kek.tar.xz.aes | aespipe > kek.tar.xz ; tar xfpv kek.tar.xz
+	cat kek.tar.xz.aes | aespipe -d | xz -d| tar xf -
