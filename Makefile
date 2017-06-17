@@ -17,7 +17,7 @@ crypt:
 
 decrypt:
 	@echo "Decrypting tarball..."
-	@cat $(repo).tar.xz.aes | aespipe -d | xz -d | tar xf -; $(if (( $1 )), then-part[$(rm $$(repo).tar.xz.aes)])
+	@cat $(repo).tar.xz.aes | aespipe -d | xz -d | tar xf -; $(if (( $1 )), then-part[$$(rm $$(repo).tar.xz.aes)])
 
 push:
 	@echo "Pushing tarball to git..."
